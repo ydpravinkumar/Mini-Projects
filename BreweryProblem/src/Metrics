@@ -1,0 +1,222 @@
+Weighted Methods per Class - A class’s complexity is determined by its attributes and methods. In short, how many lines of code are there in each method
+
+Depth of Inheritance Tree - The more classes that a subclass inherits the more methods it also inherits, thus giving that class more complexity.
+
+Number of Children - How many child classes directly inherit from a class? This determines a class’s potential impact on the rest of the program.
+
+Coupling between Objects - How many objects (that are not connected through inheritance) are coupled through other means
+
+Response for a Class - How many methods does an individual class contain, and how many other methods does it invoke through calling other objects or another class’s methods?
+
+Cohesion across Methods - What attributes do each method in a given class operate on, and are they incredibly different in their operations or relatively uniform?
+
+1) Production Class - Total Methods - 2 //
+Weighted methods per Class:
+Attributes : 2
+produceBeverage(Recipe recipe, int quantity){
+1 line of code where it calls the inventoryUpdate method
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 1
+Cohesion across Methods (CM) : low
+
+Total : 4
+
+2) Production Class //
+Production(Inventory inventory){
+    1 line of code
+}
+Attributes : 1
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+
+Total : 2
+
+Response for a Class (RFC) : 2 methods
+Total for Production Class - 4+2+2 = 8
+
+
+3) Inventory -  Total Methods - 3
+Weighted methods per Class:
+Attributes : 2
+ingredientsAvailability(Recipe recipe,int beverageQuantity){
+16 lines of code checking conditions and returning appropriate boolean values
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 1
+Cohesion across Methods (CM) : low
+Total : 19
+
+4) Inventory //
+Weighted methods per Class:
+Attributes : 8
+inventoryUpdateAdd(int water,int teaPowder,int sugar, int milk,int coffeePowder,int apple,int oranges,int mixfruit){
+10 lines of code
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+Total : 18
+
+
+5) Inventory //
+Weighted methods per Class:
+Attributes : 8
+inventoryUpdateRemove(int water,int teaPowder,int sugar, int milk,int coffeePowder,int apple,int oranges,int mixfruit){
+10 lines of code
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+Total : 18
+
+Response for a Class (RFC) : 3 methods
+8 lines of code in class to define hashmaps
+Total for inventory : 18 + 18 + 19 + 3 +8 = 66
+
+6) Recipebook //
+Weighted methods per Class:
+Attributes : 0
+getRecipes(){
+       1 line of code
+    }
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+Total : 1
+
+Response for a Class (RFC) : 1 methods
+1 line of code in class for hashmap
+Total for recipe class : 1+1+1 = 3
+
+7) Ingredients //
+Weighted methods per Class:
+Attributes : 2
+Ingredients(String ingname,int ingquantity){
+2 lines of code
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Response for a Class (RFC) : low
+Cohesion across Methods (CM) : low
+Total : 4
+
+Response for a Class (RFC) : 1 methods
+2 lines of code for ingredients class
+Total for ingredients class: 4+1+2= 7
+
+
+8) View // 3 methods in the class
+Weighted methods per Class:
+Attributes : 0
+cleanContainersMessage(){
+3 lines of code
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+Total : 3
+
+9) View //
+Weighted methods per Class:
+Attributes : 0
+cupsReady(){
+2 lines of code
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+Total : 2
+
+10) View //
+Weighted methods per Class:
+Attributes : 1
+ingredientsDetails(String ingredientName){
+2 lines of code
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+Total : 3
+
+Response for a Class (RFC) : 1 methods
+2 lines of code in class
+Total for view class: 4+1+3+2 = 10
+
+11) Recipe
+Weighted methods per Class:
+Attributes : 8
+addRecipeIngredient(int water, int teaPowder, int sugar, int milk, int coffeePowder, int apple, int oranges, int mixfruit){
+8 lines of code
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+Total : 16
+
+12) Recipe
+Attributes : 0
+public String getName(){
+        1 line of code
+    }
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+Total : 1
+
+13) Recipe
+Attributes : 1
+public  Recipe(String name){
+           1 line of code
+        }
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0Cohesion across Methods (CM) : low
+Total : 2
+
+Response for a Class (RFC) : 3 methods
+9 lines of code in the class
+Total for recipe class : 3+2+3+3+9 = 20
+
+14) Main Class : 1 method
+Attributes : 0
+void main{
+2 lines of code
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : low
+Total : 2
+
+Response for a Class (RFC) : 1
+Total for main class: 2
+
+
+15) Controller Class : Methods - 1
+Attributes : 0
+menuController{}{
+80 lines of code
+}
+Depth of Inheritance Tree (DIT) : 0
+Number of Children (NOC) : 0
+Coupling between Objects (CBO) : 0
+Cohesion across Methods (CM) : high
+Total - 80
+
+Response for a Class (RFC) : 1
+Total for controller class: 80
+
